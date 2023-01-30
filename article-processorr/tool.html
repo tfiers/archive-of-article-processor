@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="input" contenteditable="true" style="width: 50%;">
+    <div class="c-article-section__content
+      c-article-section__content--standfirst" lang="en" style="margin: 0px
+      0px 40px; padding: 8px 0px 0px; box-sizing: inherit; font-weight: 700;
+      color: rgb(34, 34, 34); font-family: Harding, Palatino, serif; font-size:
+      18px; background-color: rgb(255, 255, 255);">
+      <p style="padding: 0px; margin: 0px 0px 28px; box-sizing: inherit;
+        overflow-wrap: break-word;">Opinions diverge on whether mapping the
+        synaptic connectivity of the brain is a good idea. Here we argue that
+        albeit
+        their limitations, such maps will reveal essential characteristics of
+        neural
+        circuits that would otherwise be inaccessible.</p>
+    </div>
+    <div class="c-article-section__content" style="margin: 0px 0px 40px;
+      padding: 8px 0px 0px; box-sizing: inherit; color: rgb(34, 34, 34);
+      font-family: Harding, Palatino, serif; font-size: 18px; background-color:
+      rgb(255, 255, 255);">
+      <p style="padding: 0px; margin: 0px 0px 28px; box-sizing: inherit;
+        overflow-wrap: break-word;">Neuroscience is in its heyday: large
+        initiatives in Europe<span style="vertical-align: baseline; font-size:
+          13.5px; line-height: 0; position: relative; top: -0.5em; box-sizing:
+          inherit;"><a data-track="click" data-track-action="reference
+            anchor" data-track-label="link" data-test="citation-ref"
+            aria-label="Reference 1" title="Markram, H. et al. A Report to
+            the European Commission. n
+            http://www.humanbrainproject.eu/files/HBP_flagship.pdfn n (April
+            2012)."
+            href="https://www-nature-com.ezproxy.nottingham.ac.uk/articles/nmeth.2480#ref-CR1"
+            id="ref-link-section-d26941e269" data-jzz-gui-player="true" style="vertical-align: baseline; background-color: transparent;
+            color: rgb(0, 102, 153); text-decoration-line: none; box-sizing:
+            inherit; overflow-wrap: break-word; word-break:
+            break-word;">1</a></span>&nbsp;and the United States<span style="vertical-align: baseline; font-size: 13.5px; line-height: 0;
+          position: relative; top: -0.5em; box-sizing: inherit;"><a
+            data-track="click" data-track-action="reference anchor"
+            data-track-label="link" data-test="citation-ref"
+            aria-label="Reference 2" title="Collins, F. &amp; Prabhakar, A.
+            The White House Blog n
+            http://www.whitehouse.gov/blog/2013/04/02/brain-initiative-challenges-researchers-unlock-mysteries-human-mindn
+            n (2 April 2013)."
+            href="https://www-nature-com.ezproxy.nottingham.ac.uk/articles/nmeth.2480#ref-CR2"
+            id="ref-link-section-d26941e273" data-jzz-gui-player="true" style="vertical-align: baseline; background-color: transparent;
+            color: rgb(0, 102, 153); text-decoration-line: none; box-sizing:
+            inherit; overflow-wrap: break-word; word-break:
+            break-word;">2</a></span>&nbsp;are getting under way. The annual
+        neuroscience meetings, with their tens of thousands of attendees, feel
+        like
+        small cities. The number of neuroscience research papers published more
+        than
+        doubled over the last two decades, overtaking those from fields such as
+        biochemistry, molecular biology and cell biology<span style="vertical-align: baseline; font-size: 13.5px; line-height: 0;
+          position: relative; top: -0.5em; box-sizing: inherit;"><a
+            data-track="click" data-track-action="reference anchor"
+            data-track-label="link" data-test="citation-ref"
+            aria-label="Reference 3" title="Pautasso, M. Sustainability 4,
+            3234–3247 (2012)."
+            href="https://www-nature-com.ezproxy.nottingham.ac.uk/articles/nmeth.2480#ref-CR3"
+            id="ref-link-section-d26941e277" data-jzz-gui-player="true" style="vertical-align: baseline; background-color: transparent;
+            color: rgb(0, 102, 153); text-decoration-line: none; box-sizing:
+            inherit; overflow-wrap: break-word; word-break:
+            break-word;">3</a></span>. Given
+        the number of momentous advances we hear about, surely must we not be on
+        the
+        threshold of knowing how the healthy brain works and how to fix it when
+        it
+        does not?</p>
+    </div>
+    <div class="c-article-section__content" style="margin: 0px 0px 40px;
+      padding: 8px 0px 0px; box-sizing: inherit; color: rgb(34, 34, 34);
+      font-family: Harding, Palatino, serif; font-size: 18px; background-color:
+      rgb(255, 255, 255);">
+      <p style="padding: 0px; margin: 0px 0px 28px; box-sizing: inherit;
+        overflow-wrap: break-word;">Alas, the brain remains a tough nut to
+        crack.
+        No other organ system is associated with as long a list of incurable
+        diseases. Worse still, for many common nervous system illnesses there is
+        not
+        only no cure but no clear idea of what is wrong. Few psychiatric
+        illnesses,
+        learning disorders or even severe pain syndromes such as migraine have
+        pathognomonic signs: no blood tests, radiographic or
+        electrophysiological
+        findings, or even brain biopsies enable diagnoses. This predicament is
+        unlike that for other organ systems, where disease is nearly always
+        associated with tissue pathological and/or biochemical signs. A patient
+        may
+        come for help because of pain in their belly, but the physician
+        discovers
+        the cellular or molecular cause of the pain before a treatment regimen
+        begins. Why is this so different for the brain?</p>
+    </div>
+  </div>
+
+  <script>
+    let inputDiv = document.getElementById("input")
+
+    stripAttrs = (el) => {
+      Array.from(el.attributes).forEach(attr => {
+        el.removeAttribute(attr.name)
+      })
+    }
+
+    cleanDescendants = (el) => {
+      Array.from(el.children).forEach(child => {
+        console.log(child)
+        stripAttrs(child)
+        if (child.tagName == "SPAN") {
+          el.removeChild(child)
+        } else {
+          cleanDescendants(child)
+        }
+      })
+    }
+
+    // cleanDescendants(inputDiv)
+
+  </script>
+</body>
+
+</html>
